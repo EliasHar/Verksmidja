@@ -32,23 +32,23 @@ void loop()
   // measure the ping time in cm
   cm = 0.01723 * readUltrasonicDistance(7, 6);
   Serial.print(cm);
-  Serial.print("cm, ");
+  Serial.println("cm");
   if (cm > distanceThreshold) {
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
   }
-  if (cm <= distanceThreshold && cm > distanceThreshold - 100) {
+  if (cm <= distanceThreshold && cm > distanceThreshold - 330) {
     digitalWrite(2, HIGH);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
   }
-  if (cm <= distanceThreshold - 100 && cm > distanceThreshold - 250) {
+  if (cm <= distanceThreshold - 330 && cm > distanceThreshold - 340) {
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, LOW);
   }
-  if (cm <= distanceThreshold - 250 && cm > distanceThreshold - 350) {
+  if (cm <= distanceThreshold - 340 && cm > distanceThreshold - 350) {
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, HIGH);
